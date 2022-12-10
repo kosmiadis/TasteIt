@@ -1,0 +1,13 @@
+$header-bg-color: #8c55ff;
+
+div.header {
+    padding: 1rem;
+    background-color: $header-bg-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: min-content;
+    & img {
+        width: 140px;
+    }
+}

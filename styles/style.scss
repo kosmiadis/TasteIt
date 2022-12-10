@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import "layout/header.scss";
+@import "layout/search.scss";
+@import "layout/recipes.scss";
+
+$bg-color: #dccdfc;
+body {
+    background-color: $bg-color;
+    margin: 0;
+    font-family: "Lato";
+    display: flex;
+    flex-direction: column;
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    backdrop-filter: blur(5px);
+    min-height: 100vh;
+}
