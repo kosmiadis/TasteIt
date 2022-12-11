@@ -9,7 +9,7 @@ div.header {
 }
 
 div.header img {
-  width: 140px;
+  width: 200px;
 }
 
 div.search {
@@ -89,17 +89,12 @@ div.recipes-container div.recipe p.title {
 
 @media screen and (min-width: 490px) {
   div.recipes-container {
-    position: relative;
     align-self: center;
     display: grid;
     grid-auto-flow: dense;
     grid-template-columns: repeat(3, 400px);
     grid-auto-rows: repeat(4, min-content);
     grid-gap: 3rem;
-  }
-  div.recipes-container div.recipes {
-    margin: 0;
-    position: absolute;
   }
 }
 
