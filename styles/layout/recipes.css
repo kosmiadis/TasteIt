@@ -3,16 +3,15 @@ div.recipes-container {
   padding: 1rem 2rem;
   display: flex;
   flex-direction: column;
-  gap: 6rem;
+  gap: 3rem;
 }
 
 div.recipes-container div.recipe {
   box-shadow: 0px 0px 20px grey;
   max-width: 400px;
+  height: min-content;
   border-radius: 20px;
-  background-color: #dccdfc7e;
-  backdrop-filter: invert(30deg);
-  background-position: fixed;
+  background-color: #ba9bfcb0;
   padding: 2rem;
 }
 
@@ -37,16 +36,16 @@ div.recipes-container div.recipe p.title {
 
 @media screen and (min-width: 490px) {
   div.recipes-container {
+    position: relative;
     align-self: center;
     display: grid;
     grid-auto-flow: dense;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, min-content);
-    justify-content: center;
-    align-items: center;
-    max-width: 90%;
+    grid-template-columns: repeat(3, 400px);
+    grid-auto-rows: repeat(4, min-content);
+    grid-gap: 3rem;
   }
   div.recipes-container div.recipes {
-    height: 600px;
+    margin: 0;
+    position: absolute;
   }
 }
