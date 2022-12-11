@@ -1,3 +1,6 @@
+const recipesContainer = document.querySelector('.recipes-container')
+const search = document.querySelector('input')
+
 const options = {
 	method: 'GET',
 	headers: {
@@ -15,14 +18,57 @@ const recipes = {
     }
 }
 
-recipes.fetchRecipes("bean soup")
-
-function displaySearchRecipes(r) {
-    for (const recipe of r) {
+const searchInput = {
+    addEventListener: function () {
+        search.addEventListener('keydown', e => {
+            if (e.key == 'Enter') {
+                recipes.fetchRecipes(search.value)
         
+            }
+        })
     }
 }
+
+window.addEventListener('load', e => {
+    searchInput.addEventListener()
+})
 function chickenCarouselRecipes() {
     recipes.fetchRecipes("chicken")
+}
 
+function displaySearchRecipes(r) {
+    recipesContainer.innerHTML = ''
+    for (const recipe of r) {
+        let ing = recipe.ingredients
+        let finalIngredients = proccessedIngredients(ing)
+        
+        recipesContainer.insertAdjacentHTML('afterbegin', 
+        `
+            <div class='recipe'>
+                <p class='recipe-title'>${recipe.title}</p>
+                <div class='ingredients'>
+                    <p class='title'>Ingredients</p>
+                    <p>
+                        ${finalIngredients}
+                    </p>
+                </div>
+
+                <div class='instructions'>
+                    <p class="title">Instructions</p>
+                    <p>${recipe.instructions}</p> 
+                </div>
+            </div>
+
+        
+        `)
+    }
+}
+
+function proccessedIngredients(ingredients) {
+    let curr = ingredients
+    let flag = /tb/g
+    
+    return curr.replace(flag, "tablespoon").replace(/c/g, "cups").replace(/tbs/g, 'tablespoons')
+    .replace(/md/g, "medium").replace(/cn/g, "can").replace(/c/g, 'cup').replace(/;/g, "").replace(/===/g, '')
+    .replace(/\|/g, "<br>")
 }
