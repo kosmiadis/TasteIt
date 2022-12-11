@@ -8,7 +8,7 @@ div.recipes-container {
 
 div.recipes-container div.recipe {
   box-shadow: 0px 0px 20px grey;
-  max-width: 400px;
+  max-width: 350px;
   height: min-content;
   border-radius: 20px;
   background-color: #ba9bfcb0;
